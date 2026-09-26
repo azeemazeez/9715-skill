@@ -9,7 +9,7 @@ description: Recommend restaurants, cafes and food spots in the UAE (Dubai, Abu 
 
 ## When to use
 
-- "Where should I eat in Al Barsha / JLT / Karama / Khor Fakkan?"
+- "Where should I eat in Barsha / JLT / Karama / Khor Fakkan?"
 - "Good Pakistani / Thai / seafood / cafe in Dubai?"
 - "Cheap eats near me in Sharjah?", "somewhere for a date / a group / working on a laptop?"
 - "Is <restaurant> in Dubai any good?"
@@ -45,13 +45,13 @@ Look up slugs with `/cuisines` and `/areas` before filtering by them.
 curl -s 'https://9715.ae/api/v1/reviews?area=dubai&cuisine=cafe&min_rating=4&per_page=10'
 
 # Everything in one neighbourhood
-curl -s 'https://9715.ae/api/v1/reviews?area=al-barsha&per_page=20'
+curl -s 'https://9715.ae/api/v1/reviews?area=barsha&per_page=20'
 
 # A full review
 curl -s 'https://9715.ae/api/v1/reviews/lazy-cat'
 ```
 
-Each review in a list has `title`, `slug`, `excerpt`, `web_url`, `scores` (`overall`, `taste`, `ambience`, `service`, `price`), `cuisine`, `area_label`, `tags`, and `location` (`address`, `lat`, `lng`).
+List endpoints return `{ "items": [...], "total", "page", "total_pages" }`; `/reviews/<slug>` returns `{ "review": {...} }`. Each review in a list has `title`, `slug`, `excerpt`, `web_url`, `scores` (`overall`, `taste`, `ambience`, `service`, `price`), `cuisine`, `area_label`, `tags`, and `location` (`address`, `lat`, `lng`).
 
 ### Distance
 
